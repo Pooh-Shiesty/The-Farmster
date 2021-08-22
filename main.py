@@ -21,16 +21,12 @@ dDriveLibrary = "D:/SteamLibrary/steamapps/common/BloonsTD6/BloonsTD6.exe"
 if Path(cDriveModLibrary).is_file():
     btd6_directory = cDriveLibrary
     print("MelonLoader is installed\nLaunching...")
-    time.sleep(1)
     print("Make sure you have Speedhack mod in your Mods folder!")
-    time.sleep(1)
 
 elif Path(dDriveModLibrary).is_file():
     btd6_directory = dDriveLibrary
     print("MelonLoader is installed\nLaunching...")
-    time.sleep(1)
     print("Make sure you have Speedhack mod in your Mods folder!")
-    time.sleep(1)
 
 # And if MelonLoader isn't in default install locations, tell the user to input the directory
 else:
@@ -38,20 +34,7 @@ else:
     btd6_directory = input("Type in the path to your BTD6 directory where MelonLoader is installed (include BloonsTD6.exe in the end)")
     if Path(btd6_directory).is_file():
         print("MelonLoader is installed\nLaunching...")
-        time.sleep(1)
         print("Make sure you have Speedhack mod in your Mods folder!")
-        time.sleep(1)
-
-# Countdown
-print("Starting script in 3 seconds.")
-time.sleep(1)
-counter = 0
-while True:
-    if counter == 3:
-        break
-    counter += 1
-    print(f"{counter}")
-    time.sleep(1)
 
 # Launch BTD6 with Mods and wait 12.5 cause that's around how long it will take to launch
 # BTD6 on an average PC
@@ -60,27 +43,16 @@ time.sleep(12.5)
 
 #BTD6 Automatic Map Launch
 start_button = None
+print("Looking for Start Button...")
 while start_button == None:
     if start_button != None:
         print("Found Start Button")
         break
     start_button = pyautogui.locateCenterOnScreen("./resources/start_button.png")
-    print("Couldn't find Start Button\nRetrying...")
-    time.sleep(2)
 
 pyautogui.click(start_button)
 time.sleep(3)
-
-ok_button = None
-while ok_button == None:
-    if ok_button != None:
-        print("Found OK Button")
-        break 
-    ok_button = pyautogui.locateCenterOnScreen("./resources/ok_button.png")
-    print("Couldn't find Ok Button\nRetrying...")
-    time.sleep(2)
-
-pyautogui.click(ok_button)
+pyautogui.click(955, 716)
 
 # XP and Monkey Money Calculator
 counter = pyautogui.prompt(text="How many times would you like to complete this map? (Must type a whole number)", title="bruh")
@@ -107,48 +79,48 @@ while True:
         break
     n += 1
     pyautogui.click(837, 938)
-    time.sleep(1.5)
+    time.sleep(0.5)
 
     pyautogui.click(1340, 970)
-    time.sleep(1.5)
+    time.sleep(0.5)
 
     pyautogui.click(517, 562)
-    time.sleep(1.5)
+    time.sleep(0.5)
 
     pyautogui.click(618, 414)
-    time.sleep(1.5)
+    time.sleep(0.5)
 
     pyautogui.click(1280, 466)
     time.sleep(5)
 
     pyautogui.click(952, 765)
-    time.sleep(1.5)
+    time.sleep(1)
 
     # Deflation strat + loop
     pyautogui.press("D")
     pyautogui.moveTo(837, 366)
-    pyautogui.click(clicks=2, interval=0.5)
+    pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(323, 490, clicks=4, interval=0.2)
     pyautogui.click(340, 788, clicks=2, interval=0.2)
-    time.sleep(0.5)
+    time.sleep(0.2)
     pyautogui.press("esc")
     time.sleep(0.2)
     pyautogui.press("D")
     pyautogui.moveTo(832, 699)
-    pyautogui.click(clicks=2, interval=0.5)
+    pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(1585, 483, clicks=4, interval=0.2)
     pyautogui.click(1542, 784, clicks=2, interval=0.2)
     pyautogui.press("esc")
     time.sleep(0.2)
     pyautogui.press("F")
     pyautogui.moveTo(832, 766)
-    pyautogui.click(clicks=2, interval=0.5)
+    pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(1585, 483, clicks=4, interval=0.2)
     pyautogui.press("esc")
     time.sleep(0.2)
     pyautogui.press("F")
     pyautogui.moveTo(833, 290)
-    pyautogui.click(clicks=2, interval=0.5)
+    pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(1585, 483, clicks=4, interval=0.2)
     pyautogui.press("esc")
     time.sleep(0.2)
@@ -159,9 +131,9 @@ while True:
     pyautogui.press("9")
     time.sleep(10)
     pyautogui.click(945, 917)
-    time.sleep(2)
+    time.sleep(1)
     pyautogui.click(796, 857)
     time.sleep(3)
 
 # Alert the user in-case they didn't check the commandline and see if the program has finished
-pyautogui.alert(text=f"Done!\nYou earned {xp} XP and {mk_m} Monkey Money in {counter} runs(s)!", title="Autofarm is done!", button="Let's GOOOOO!")
+pyautogui.alert(text=f"Done!\nYou earned {xp} XP and {mk_m} Monkey Money in {counter} run(s)!", title="Autofarm is done!", button="Let's GOOOOO!")
