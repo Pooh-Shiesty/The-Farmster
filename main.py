@@ -3,6 +3,7 @@ import time
 from pathlib import Path
 import pyautogui
 import sys
+import numpy
 
 pyautogui.FAILSAFE = True
 
@@ -39,7 +40,7 @@ else:
 # Launch BTD6 with Mods and wait 12.5 cause that's around how long it will take to launch
 # BTD6 on an average PC
 subprocess.Popen(btd6_directory)
-time.sleep(12.5)
+time.sleep(14.25)
 
 #BTD6 Automatic Map Launch
 start_button = None
@@ -48,13 +49,13 @@ while start_button == None:
     if start_button != None:
         print("Found Start Button")
         break
-    start_button = pyautogui.locateCenterOnScreen("./resources/start_button.png")
+    start_button = pyautogui.locateCenterOnScreen("./resources/start_button.png", confidence=0.8)
 
 pyautogui.click(start_button)
-time.sleep(3)
+time.sleep(5)
 pyautogui.click(955, 716)
 
-# XP and Monkey Money Calculator
+# XP, Monkey Money and Time Calculator
 counter = pyautogui.prompt(text="How many times would you like to complete this map? (Must type a whole number)", title="bruh")
 extra_mm_unlocked = pyautogui.confirm(text="Have you unlocked the Mo' Monkey Money Knowledge?", buttons=["Yes", "No"])
 if extra_mm_unlocked == "Yes":
@@ -62,8 +63,21 @@ if extra_mm_unlocked == "Yes":
 else:
     mk_m = int(counter) * 60
 xp = int(counter) * float(59731)
+
+# HMTIT = How Much Time It Takes
+hmtit = 17.89 * float(counter)
+
+def convert(seconds):
+    seconds = seconds % (24 * 3600)
+    hour = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+
+    return "%d:%02d:%02d" % (hour, minutes, seconds)
+
 print(f"Monkey Money: {mk_m}\nXP: {xp}")
-usure = pyautogui.confirm(text="Do you want to start farming? (Pressing no will terminate the process)", buttons=["Yes", "No"])
+usure = pyautogui.confirm(text=f"Do you want to start farming? (Pressing no will terminate the process)\nEstimated Time: {convert(hmtit)}\nMonkey Money: {mk_m} | XP: {xp}", buttons=["Yes", "No"])
 if usure == "Yes":
     print("Launching Infernal | Deflation Mode")
 
@@ -71,24 +85,25 @@ elif usure == "No":
     print("Terminating Python process! (BloonsTD6 will not be terminated)")
     sys.exit()
 
+# Random delay between 0.1 and 0.3 seconds
+delay = numpy.random.uniform(0.1, 0.3)
+
 n = 0
 while True:
     if n == int(counter):
-        # Print how much we earned
-        print("Done!\nYou earned {mk_m} Monkey Money and {xp} XP")
         break
     n += 1
     pyautogui.click(837, 938)
-    time.sleep(0.5)
+    time.sleep(delay)
 
     pyautogui.click(1340, 970)
-    time.sleep(0.5)
+    time.sleep(delay)
 
     pyautogui.click(517, 562)
-    time.sleep(0.5)
+    time.sleep(delay)
 
     pyautogui.click(618, 414)
-    time.sleep(0.5)
+    time.sleep(delay)
 
     pyautogui.click(1280, 466)
     time.sleep(5)
@@ -102,32 +117,32 @@ while True:
     pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(323, 490, clicks=4, interval=0.2)
     pyautogui.click(340, 788, clicks=2, interval=0.2)
-    time.sleep(0.2)
+    time.sleep(delay)
     pyautogui.press("esc")
-    time.sleep(0.2)
+    time.sleep(delay)
     pyautogui.press("D")
     pyautogui.moveTo(832, 699)
     pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(1585, 483, clicks=4, interval=0.2)
     pyautogui.click(1542, 784, clicks=2, interval=0.2)
     pyautogui.press("esc")
-    time.sleep(0.2)
+    time.sleep(delay)
     pyautogui.press("F")
     pyautogui.moveTo(832, 766)
     pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(1585, 483, clicks=4, interval=0.2)
     pyautogui.press("esc")
-    time.sleep(0.2)
+    time.sleep(delay)
     pyautogui.press("F")
     pyautogui.moveTo(833, 290)
     pyautogui.click(clicks=2, interval=0.2)
     pyautogui.click(1585, 483, clicks=4, interval=0.2)
     pyautogui.press("esc")
-    time.sleep(0.2)
+    time.sleep(delay)
     pyautogui.press("space")
-    time.sleep(0.2)
+    time.sleep(delay)
     pyautogui.press("space")
-    time.sleep(0.2)
+    time.sleep(delay)
     pyautogui.press("9")
     time.sleep(10)
     pyautogui.click(945, 917)
