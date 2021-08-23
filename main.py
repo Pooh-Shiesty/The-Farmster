@@ -9,7 +9,6 @@ import config
 pag.FAILSAFE = config.PAG_FAILSAFE
 # pag.PAUSE = config.PAG_WAIT_TIME
 
-wait_location = None
 game_counter = 0
 
 if config.PAG_FAILSAFE:
@@ -33,9 +32,6 @@ else:
 
 print("MelonLoader is installed\nLaunching...")
 print("Make sure you have Speedhack mod in your Mods folder!")
-
-def wait_location():
-    return wait_location
 
 def delay():
     if config.FAST_MODE == True:
@@ -108,28 +104,28 @@ while True:
     pag.press(config.NINJA_MONKEY)
     pag.moveTo(837, 366, duration=delay())
     pag.click(clicks=2, interval=delay())
-    pag.click(323, 490, clicks=4, interval=delay())
-    pag.click(340, 788, clicks=2, interval=delay())
+    pag.press(config.UPGRADE_1, presses=4, interval=delay())
+    pag.press(config.UPGRADE_3, presses=2, interval=delay())
     time.sleep(delay())
     pag.press("esc")
     time.sleep(delay())
     pag.press(config.NINJA_MONKEY)
     pag.moveTo(832, 699, duration=delay())
     pag.click(clicks=2, interval=delay())
-    pag.click(1585, 483, clicks=4, interval=delay())
-    pag.click(1542, 784, clicks=2, interval=delay())
+    pag.press(config.UPGRADE_1, presses=4, interval=delay())
+    pag.press(config.UPGRADE_3, presses=2, interval=delay())
     pag.press("esc")
     time.sleep(delay())
     pag.press(config.ALCHEMIST_MONKEY)
     pag.moveTo(832, 766, duration=delay())
     pag.click(clicks=2, interval=delay())
-    pag.click(1585, 483, clicks=4, interval=delay())
+    pag.press(config.UPGRADE_1, presses=4, interval=delay())
     pag.press("esc")
     time.sleep(delay())
     pag.press(config.ALCHEMIST_MONKEY)
     pag.moveTo(833, 290, duration=delay())
     pag.click(clicks=2, interval=delay())
-    pag.click(1585, 483, clicks=4, interval=delay())
+    pag.press(config.UPGRADE_1, presses=4, interval=delay())
     pag.press("esc")
     time.sleep(delay())
     pag.press("space")
