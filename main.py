@@ -7,7 +7,6 @@ import numpy
 import config
 
 pag.FAILSAFE = config.PAG_FAILSAFE
-
 game_counter = 0
 
 if config.PAG_FAILSAFE:
@@ -38,20 +37,13 @@ def delay():
     else:
         return numpy.random.uniform(0.1, 0.2)
 
-def click_image(img):
-    x = pag.locateCenterOnScreen(img, confidence=config.OPENCV_CONFIDENCE)
-    if x == None:
-        pag.screenshot(f"{config.LOGS_DIR}/debug_{time.time()}")
-        raise ValueError("Can't find image")
-    pag.click(x)
-
 # Launch BTD6
 subprocess.Popen(btd6_directory)
 time.sleep(17.5) # Wait just to make sure they in da menu
 
-click_image(config.START_BUTTON)
+pag.click(962, 1000)
 time.sleep(5)
-click_image(config.OK_BUTTON)
+pag.click(961, 733)
 
 # XP, Monkey Money and Time Calculator
 counter = pag.prompt(text="How many times would you like to complete this map? (Must type a whole number)", title="bruh")
@@ -88,18 +80,20 @@ while True:
     if game_counter == int(counter):
         break
     game_counter += 1
-    click_image(config.PLAY_BUTTON)
+    pag.click(841, 929)
     time.sleep(0.5)
-    click_image(config.EXPERT_BUTTON)
+    pag.click(1319, 978)
     time.sleep(0.5)
-    # In-case golden bloon wants to mess with OpenCV which happened to me :()
+    # In-case golden bloon wants to mess with OpenCV which happened to me :(
     pag.click(544, 557)
     time.sleep(0.5)
-    click_image(config.EASY_BUTTON)
+    pag.click(615, 403)
     time.sleep(0.5)
-    click_image(config.DEFLATION_BUTTON)
+    pag.click(1281, 441)
+    time.sleep(0.5)
+    pag.click(1137, 717)
     time.sleep(5)
-    click_image(config.OK_BUTTON)
+    pag.click(968, 762)
     time.sleep(1)
 
     # Deflation strat + loop
@@ -130,13 +124,10 @@ while True:
     pag.press(config.UPGRADE_1, presses=4, interval=delay())
     pag.press("esc")
     time.sleep(delay())
-    pag.press("space")
-    time.sleep(delay())
-    pag.press("space")
-    time.sleep(delay())
+    pag.press(config.FAST_FORWARD, presses=2, interval=delay())
     pag.press("9")
     time.sleep(10)
-    click_image(config.NEXT_BUTTON)
+    pag.click(944, 900)
     time.sleep(0.5)
     pag.click(796, 857)
     time.sleep(3)
