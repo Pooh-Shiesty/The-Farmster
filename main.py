@@ -7,7 +7,6 @@ import numpy
 import config
 
 pag.FAILSAFE = config.PAG_FAILSAFE
-# pag.PAUSE = config.PAG_WAIT_TIME
 
 game_counter = 0
 
@@ -41,8 +40,9 @@ def delay():
 
 def click_image(img):
     x = pag.locateCenterOnScreen(img, confidence=config.OPENCV_CONFIDENCE)
-    if x is None:
-        raise ValueError(f"Cannot find {x} on screen")
+    if x == None:
+        pag.screenshot(f"{config.LOGS_DIR}/debug_{time.time()}")
+        raise ValueError("Can't find image")
     pag.click(x)
 
 # Launch BTD6
@@ -83,6 +83,7 @@ elif usure == "No":
     print("Terminating Python process! (BloonsTD6 will not be terminated)")
     sys.exit()
 
+time.sleep(1)
 while True:
     if game_counter == int(counter):
         break
@@ -91,7 +92,8 @@ while True:
     time.sleep(0.5)
     click_image(config.EXPERT_BUTTON)
     time.sleep(0.5)
-    click_image(config.INFERNAL_MAP_BUTTON)
+    # In-case golden bloon wants to mess with OpenCV which happened to me :()
+    pag.click(544, 557)
     time.sleep(0.5)
     click_image(config.EASY_BUTTON)
     time.sleep(0.5)
@@ -139,5 +141,4 @@ while True:
     pag.click(796, 857)
     time.sleep(3)
 
-# Alert the user in-case they didn't check the commandline and see if the program has finished
 pag.alert(text=f"Done!\nYou earned {xp} XP and {mk_m} Monkey Money in {counter} run(s)!", title="Autofarm is done!", button="Let's GOOOOO!")

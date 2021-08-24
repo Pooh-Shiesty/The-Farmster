@@ -12,6 +12,7 @@ The Farmster is a BTD6 Bot that plays for you and earns XP and Monkey Money. Thi
 #### In-game prerequisites
 * Ninja Monkey 4-0-2
 * Alchemist Monkey 4-0-0
+---
 
 ## Installation
 
@@ -19,15 +20,18 @@ Download the code from the [repo](https://github.com/PepeTheRoya/BTD6-Auto-Farme
 ```
 pip install -r requirements.txt
 ```
-And once you have all of the requirements installed you can proceed to launch the python application to start farming!
+And once you have all of the requirements installed you can open up the config.py and change your hotkeys
+and other stuff to make sure the code is working properly for you!
 
 #### Windows: ```python main.py```
 #### Linux: ```python3 main.py```
+---
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+---
 
 ## Credits
-Took inspiration from [JSpeleers](https://github.com/JSpeleers/BloonsTD6Bot) check him out.
+Took inspiration from [JSpeleers](https://github.com/JSpeleers/BloonsTD6Bot) and [Timotheeee](https://github.com/Timotheeee)check him out.
