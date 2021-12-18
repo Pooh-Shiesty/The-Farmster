@@ -2,6 +2,7 @@ import time
 
 import numpy as np
 import pyautogui as pag
+import pydirectinput as pagg
 
 import config
 
@@ -18,16 +19,16 @@ def launch_delay():
         
 
 def launch():
-    pag.click(512, 566)
+    pagg.click(512, 566)
     time.sleep(launch_delay())
-    pag.click(637, 558)
+    pagg.click(637, 558)
     time.sleep(launch_delay())
-    pag.click(1276, 442)
+    pagg.click(1276, 442)
     time.sleep(launch_delay())
-    pag.click(1122, 720)
+    pagg.click(1122, 720)
     time.sleep(3)
-    pag.click(942, 757)
-    time.sleep(1.5)
+    pagg.click(942, 757)
+    time.sleep(3)
 
 
 def level_detection():
@@ -42,9 +43,9 @@ def level_detection():
             pass
         elif x != None:
             time.sleep(0.5)
-            pag.click(x, clicks=2, interval=delay())
+            pagg.click(x, clicks=2, interval=delay())
             time.sleep(0.5)
-            pag.press("space")
+            pagg.press("space")
             if counter < 3:
                 counter += 7
             elif counter > 5:
@@ -69,45 +70,45 @@ def map_completed():
             pass
         elif x != None:
             time.sleep(0.5)
-            pag.click(x)
+            pagg.click(x)
             time.sleep(1)
             y = pag.locateCenterOnScreen(hb, confidence=0.9)
             time.sleep(0.5)
-            pag.click(y)
+            pagg.click(y)
             time.sleep(3)
             break
     time.sleep(1)
 
 
 def main():
-    pag.press(config.NINJA_MONKEY)
+    pagg.press(config.NINJA_MONKEY)
     pag.moveTo(837, 366, duration=delay())
-    pag.click(clicks=2, interval=delay())
-    pag.press(config.UPGRADE_1, presses=4, interval=delay())
-    pag.press(config.UPGRADE_3, presses=2, interval=delay())
+    pagg.click(clicks=2, interval=delay())
+    pagg.press(config.UPGRADE_1, presses=4, interval=delay())
+    pagg.press(config.UPGRADE_3, presses=2, interval=delay())
     time.sleep(delay())
-    pag.press("esc")
+    pagg.press("esc")
     time.sleep(delay())
-    pag.press(config.NINJA_MONKEY)
+    pagg.press(config.NINJA_MONKEY)
     pag.moveTo(832, 699, duration=delay())
-    pag.click(clicks=2, interval=delay())
-    pag.press(config.UPGRADE_1, presses=4, interval=delay())
-    pag.press(config.UPGRADE_3, presses=2, interval=delay())
-    pag.press("esc")
+    pagg.click(clicks=2, interval=delay())
+    pagg.press(config.UPGRADE_1, presses=4, interval=delay())
+    pagg.press(config.UPGRADE_3, presses=2, interval=delay())
+    pagg.press("esc")
     time.sleep(delay())
-    pag.press(config.ALCHEMIST_MONKEY)
+    pagg.press(config.ALCHEMIST_MONKEY)
     pag.moveTo(832, 766, duration=delay())
-    pag.click(clicks=2, interval=delay())
-    pag.press(config.UPGRADE_1, presses=4, interval=delay())
-    pag.press("esc")
+    pagg.click(clicks=2, interval=delay())
+    pagg.press(config.UPGRADE_1, presses=4, interval=delay())
+    pagg.press("esc")
     time.sleep(delay())
-    pag.press(config.ALCHEMIST_MONKEY)
+    pagg.press(config.ALCHEMIST_MONKEY)
     pag.moveTo(833, 290, duration=delay())
-    pag.click(clicks=2, interval=delay())
-    pag.press(config.UPGRADE_1, presses=4, interval=delay())
-    pag.press("esc")
+    pagg.click(clicks=2, interval=delay())
+    pagg.press(config.UPGRADE_1, presses=4, interval=delay())
+    pagg.press("esc")
     time.sleep(delay())
-    pag.press(config.FAST_FORWARD, presses=2, interval=delay())
-    pag.press("9")
+    pagg.press(config.FAST_FORWARD, presses=2, interval=delay())
+    pagg.press("9")
     level_detection()
     map_completed()
