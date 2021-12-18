@@ -21,6 +21,6 @@ HERO_MONKEY = "u"
 SNIPER_MONKEY = "z"
 
 # If buttons are wrong change to your upgrade buttons
-UPGRADE_1 = ","
-UPGRADE_2 = "."
-UPGRADE_3 = "'"
+UPGRADE_1 = "1"
+UPGRADE_2 = "2"
+UPGRADE_3 = "3"
