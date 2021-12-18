@@ -19,15 +19,15 @@ def launch_delay():
         
 
 def launch():
-    pagg.click(512, 566)
+    pag.click(512, 566)
     time.sleep(launch_delay())
-    pagg.click(637, 558)
+    pag.click(637, 558)
     time.sleep(launch_delay())
-    pagg.click(1276, 442)
+    pag.click(1276, 442)
     time.sleep(launch_delay())
-    pagg.click(1122, 720)
+    pag.click(1122, 720)
     time.sleep(3)
-    pagg.click(942, 757)
+    pag.click(942, 757)
     time.sleep(3)
 
 
@@ -43,7 +43,7 @@ def level_detection():
             pass
         elif x != None:
             time.sleep(0.5)
-            pagg.click(x, clicks=2, interval=delay())
+            pag.click(x, clicks=2, interval=delay())
             time.sleep(0.5)
             pagg.press("space")
             if counter < 3:
@@ -70,11 +70,11 @@ def map_completed():
             pass
         elif x != None:
             time.sleep(0.5)
-            pagg.click(x)
+            pag.click(x)
             time.sleep(1)
             y = pag.locateCenterOnScreen(hb, confidence=0.9)
             time.sleep(0.5)
-            pagg.click(y)
+            pag.click(y)
             time.sleep(3)
             break
     time.sleep(1)
@@ -83,7 +83,7 @@ def map_completed():
 def main():
     pagg.press(config.NINJA_MONKEY)
     pag.moveTo(837, 366, duration=delay())
-    pagg.click(clicks=2, interval=delay())
+    pag.click(clicks=2, interval=delay())
     pagg.press(config.UPGRADE_1, presses=4, interval=delay())
     pagg.press(config.UPGRADE_3, presses=2, interval=delay())
     time.sleep(delay())
@@ -91,20 +91,20 @@ def main():
     time.sleep(delay())
     pagg.press(config.NINJA_MONKEY)
     pag.moveTo(832, 699, duration=delay())
-    pagg.click(clicks=2, interval=delay())
+    pag.click(clicks=2, interval=delay())
     pagg.press(config.UPGRADE_1, presses=4, interval=delay())
     pagg.press(config.UPGRADE_3, presses=2, interval=delay())
     pagg.press("esc")
     time.sleep(delay())
     pagg.press(config.ALCHEMIST_MONKEY)
     pag.moveTo(832, 766, duration=delay())
-    pagg.click(clicks=2, interval=delay())
+    pag.click(clicks=2, interval=delay())
     pagg.press(config.UPGRADE_1, presses=4, interval=delay())
     pagg.press("esc")
     time.sleep(delay())
     pagg.press(config.ALCHEMIST_MONKEY)
     pag.moveTo(833, 290, duration=delay())
-    pagg.click(clicks=2, interval=delay())
+    pag.click(clicks=2, interval=delay())
     pagg.press(config.UPGRADE_1, presses=4, interval=delay())
     pagg.press("esc")
     time.sleep(delay())
