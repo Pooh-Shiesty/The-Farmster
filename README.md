@@ -34,4 +34,4 @@ Please make sure to update tests as appropriate.
 ---
 
 ## Credits
-Took inspiration from [JSpeleers](https://github.com/JSpeleers/BloonsTD6Bot) and [Timotheeee](https://github.com/Timotheeee)check him out.
+Took inspiration from [JSpeleers](https://github.com/JSpeleers/BloonsTD6Bot) and [Timotheeee](https://github.com/Timotheeee) check him out.
