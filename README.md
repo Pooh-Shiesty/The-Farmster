@@ -1,5 +1,7 @@
 # The Farmster
 
+Working on rewrite might release it about 2 weeks.
+
 ### USE AT YOUR OWN RISK!
 ---
 The Farmster is a BTD6 Bot that plays for you and earns XP and Monkey Money. This could result in a lot of Monkey Knowledge especially when in the lower levels. And this program also makes use of Mods which in this case makes this the fastest BTD6 auto farmer. This was made for Windows but it should still work for Linux (Mac I'm not sure because PyAutoGUI works differently with Mac in some cases.
