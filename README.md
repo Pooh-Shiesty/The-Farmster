@@ -34,4 +34,8 @@ Please make sure to update tests as appropriate.
 ---
 
 ## Credits
-Took inspiration from [JSpeleers](https://github.com/JSpeleers/BloonsTD6Bot) and [Timotheeee](https://github.com/Timotheeee)check him out.
+Took inspiration from [JSpeleers](https://github.com/JSpeleers/BloonsTD6Bot) and [Timotheeee](https://github.com/Timotheeee) check him out.
+
+
+shit fun fact:
+Name inpsiration from Dead by Daylight, There is a killer named The Trickster (kpop joker) and I decided to name the auto farming bot The Farmster :)
