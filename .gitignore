@@ -1,5 +1,6 @@
-__pycache__/config.cpython-39.pyc
-__pycache__/main.cpython-39.pyc
-.vscode/launch.json
-__pycache__/dark_castle.cpython-39.pyc
-__pycache__/infernal.cpython-39.pyc
+__pycache__
+.vscode
+venv
+main.spec
+build
+dist

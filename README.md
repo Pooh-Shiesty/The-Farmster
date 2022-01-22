@@ -23,7 +23,7 @@ pip install -r requirements.txt
 And once you have all of the requirements installed you can open up the config.py and change your hotkeys
 and other stuff to make sure the code is working properly for you!
 
-#### Windows: ```python main.py```
+#### Windows: ```py -3 main.py```
 #### Linux: ```python3 main.py```
 ---
 

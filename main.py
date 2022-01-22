@@ -28,7 +28,7 @@ elif Path(config.MELON_LOADER_D_DRIVE).is_file():
 # And if MelonLoader isn't in default install locations, tell the user to input the directory
 else:
     print("Couldn't find MelonLoader")
-    btd6_directory = input("Type in the path to your BTD6 directory where MelonLoader is installed (include BloonsTD6.exe in the end)")
+    btd6_directory = input("Type in the path to your BTD6 directory where MelonLoader is installed (include BloonsTD6.exe in the end): ")
     if Path(btd6_directory).is_file():
         pass
 
